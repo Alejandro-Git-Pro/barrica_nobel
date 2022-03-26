@@ -1,12 +1,13 @@
 package com.app;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoJesv2Application {
+public class BarricanobelBackApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoJesv2Application.class, args);
+		SpringApplication.run(BarricanobelBackApplication.class, args);
 	}
 
 }
