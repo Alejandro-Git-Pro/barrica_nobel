@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.app.Greatting.java&apos; to &apos;Greeting.java&apos;&#x0D;&#x0A;- Original project: &apos;demoJESV2&apos;&#x0D;&#x0A;- Original element: &apos;com.app.Greatting.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.app.Greeting.java&apos;" description="Rename compilation unit &apos;Greatting.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.app{Greatting.java" name="Greeting.java" references="false" stamp="1647098720030" version="1.0"/>
+</session>
