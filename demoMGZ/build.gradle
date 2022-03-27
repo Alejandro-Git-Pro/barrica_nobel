@@ -14,9 +14,47 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.6.4'
+    //implementation 'org.springframework.boot:spring-boot-starter-security:2.6.3'
 
+	testImplementation 'org.springframework.boot:spring-boot-starter-web:2.6.4'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.4'
+
+	compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+	
+}
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+
+[10:34 a. m., 19/3/2022] +57 321 6430892: jacocoTestReport {
+   reports {
+      xml.enabled true
+   }
+}
+
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.8
+            }
+        }
+    }
+}
+[10:35 a. m., 19/3/2022] +57 321 6430892: plugins {
+	id 'org.springframework.boot' version '2.6.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'jacoco'                                 
+    id 'org.sonarqube' version '3.0' 
+}
+
+
