@@ -37,13 +37,14 @@ class DemoJgpv1ApplicationTests {
 		// WHEN: Cuando invoco la URL
 		// THEN: El servicio responde el Saludo con mi nombre: Hello, Juan!
 		
-		String URL = "http://localhost:" + port + "/greeting?name=Juan";
+		String URL = "http://localhost:" + port + "/greeting?name=Juan!";
 
 		// WHEN: Cuando invoco la URL
-		String restRequest = restTemplate.getForObject(URL, Greeting.class).getContent();
+		//String restRequest = restTemplate.getForObject(URL, Greeting.class).getContent();
+		String restRequest = restTemplate.withBasicAuth("admin","123456789").getForObject(URL, Greeting.class).getContent();
 		
 		// THEN: El servicio responde el Saludo con mi nombre: Hello, Juan!
-		assertTrue(restRequest.equals("Hello, Juan!"));
+		assertTrue(restRequest.equals("Hello, Juan!!"));
 		
 		
 		
