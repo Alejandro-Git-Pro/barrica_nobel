@@ -1,12 +1,9 @@
 package com.app;
 
 public class Greeting {
-
 	
 	private long id;
 	private String content;
-	
-	
 	
 	public long getId() {
 		return id;
@@ -20,16 +17,24 @@ public class Greeting {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
+	
 	public Greeting(long id, String content) {
 		super();
 		this.id = id;
 		this.content = content;
 	}
+	
 	public Greeting() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
+
 	
 	
+		
+	
+
 }
+
