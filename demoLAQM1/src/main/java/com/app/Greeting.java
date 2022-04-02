@@ -1,5 +1,6 @@
 package com.app;
 
+
 public class Greeting {
 	
 	private long id;
@@ -29,8 +30,4 @@ public class Greeting {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-		
-	
-
 }

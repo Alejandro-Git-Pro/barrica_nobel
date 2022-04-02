@@ -1,15 +1,32 @@
-package com.app.entities;
+package com.app.entity;
 
 import java.util.Arrays;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
 public class Descuento {
 	
+	@Id @GeneratedValue(strategy=GenerationType.AUTO , generator="native")
+	@GenericGenerator(name = "native", strategy = "native")
+	private long id;
 	private Date FechaInicial;
 	private Date FechaFinal;
-	private Producto productos[];
-	Double descuento;
-	
+	//private Producto productos[];
+	private Double descuento;
+		
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	public Double getDescuento() {
 		return descuento;
 	}
@@ -28,30 +45,15 @@ public class Descuento {
 	public void setFechaFinal(Date fechaFinal) {
 		FechaFinal = fechaFinal;
 	}
+	
+	/*
 	public Producto[] getProductos() {
 		return productos;
 	}
 	public void setProductos(Producto[] productos) {
 		this.productos = productos;
 	}
-	
-	public Descuento(Date fechaInicial, Date fechaFinal, Producto[] productos, Double descuento) {
-		super();
-		FechaInicial = fechaInicial;
-		FechaFinal = fechaFinal;
-		this.productos = productos;
-		this.descuento = descuento;
-	}
-	
-	public Descuento() {
-		
-	}
-	
-	@Override
-	public String toString() {
-		return "Descuento [FechaInicial=" + FechaInicial + ", FechaFinal=" + FechaFinal + ", productos="
-				+ Arrays.toString(productos) + ", descuento=" + descuento + "]";
-	}
+	*/
 	
 	
 
