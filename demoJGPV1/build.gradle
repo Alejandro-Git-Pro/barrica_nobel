@@ -43,9 +43,7 @@ jacoco {
 
 jacocoTestReport {
     reports {
-        xml.required = false
-        csv.required = false
-        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+			xml.enabled true
     }
 }
 
@@ -94,6 +92,8 @@ tasks.register('TareaCustom') {
         println ' Leer Documentacion https://docs.gradle.org/current/userguide/tutorial_using_tasks.html '
     }
 }
+
+
 
 
 
