@@ -18,8 +18,7 @@ public class UnidadController {
 
 	@Autowired
     private UnidadCRUDRepository unidadRepository;
-	@Autowired
-	// private UnidadQUERYRepository unidadRepositoryQuery;
+
 	
 	@CrossOrigin(origins = "*")
     @PostMapping(path= "/addunidad", consumes = "application/json", produces = "application/json")
