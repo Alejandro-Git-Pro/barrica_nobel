@@ -34,6 +34,22 @@ public class Unidad {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
+	@Override
+	public String toString() {
+		return "Unidad [id=" + id + ", nombrePack=" + nombrePack + ", cantidad=" + cantidad + "]";
+	}
+	public Unidad(long id, String nombrePack, int cantidad) {
+		super();
+		this.id = id;
+		this.nombrePack = nombrePack;
+		this.cantidad = cantidad;
+	}
+	
+	public Unidad() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	
 	
 }

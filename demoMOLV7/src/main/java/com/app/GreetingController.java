@@ -13,11 +13,12 @@ public class GreetingController {
 	
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
+	protected String Message = "Welcome to IUE";
 	
 	@RequestMapping("/start")
 	@ResponseBody
 	public String welcome(){
-		return " Bienvenido a la IUE ";
+		return Message;
 	}
 	
 	@GetMapping("/greeting")
