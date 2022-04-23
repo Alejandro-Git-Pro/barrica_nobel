@@ -15,17 +15,17 @@ public class Cliente {
 
 	@Id @GeneratedValue(strategy=GenerationType.AUTO , generator="native")
 	@GenericGenerator(name = "native", strategy = "native")
-	private long id;
+	private Long id;
 	private long nit;
 	private String tipoCliente;
 	private String nombre; 
 	private String apellido;
 	private String genero;
 	private String fechadenacimeinto;
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public long getNit() {
@@ -69,18 +69,13 @@ public class Cliente {
 		return "Cliente [id=" + id + ", nit=" + nit + ", tipoCliente=" + tipoCliente + ", nombre=" + nombre
 				+ ", apellido=" + apellido + ", genero=" + genero + ", fechadenacimeinto=" + fechadenacimeinto + "]";
 	}
-	public Cliente(long id, long nit, String tipoCliente, String nombre, String apellido, String genero,
-			String fechadenacimeinto) {
+	public Cliente() {
 		super();
-		this.id = id;
-		this.nit = nit;
-		this.tipoCliente = tipoCliente;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.genero = genero;
-		this.fechadenacimeinto = fechadenacimeinto;
+		// TODO Auto-generated constructor stub
 	}
 	
-	
-	
 }
+	
+	
+	
+	
