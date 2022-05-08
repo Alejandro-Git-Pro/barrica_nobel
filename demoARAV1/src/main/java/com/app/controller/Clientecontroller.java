@@ -43,7 +43,7 @@ public class Clientecontroller {
 	@CrossOrigin(origins = "*")
 	@PutMapping(path = "/Clienteupdate")
 	public Cliente updateCliente(@RequestBody Cliente cliente) {
-		ClienteRepository.save(cliente);
+		ClienteRepository.saveAndFlush(cliente);
 		return cliente;
 	}
 	
