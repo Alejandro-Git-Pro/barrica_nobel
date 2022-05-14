@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.security.web.header.writers.StaticHeadersWriter;
 
 @Configuration
 @EnableWebSecurity
@@ -23,14 +24,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	   
 	http.csrf().disable();
 	   
-    http.authorizeRequests()
+   /* http.authorizeRequests()
     .antMatchers("/", "/start","/logout/**").permitAll()
     .antMatchers("/greeting/**").hasRole("ADMIN")
     //.antMatchers("/**").hasAnyRole("ADMIN", "USER")
-    .anyRequest().authenticated();
+    .anyRequest().authenticated();*/
+    
+    http.headers().addHeaderWriter(
+            new StaticHeadersWriter("Access-Control-Allow-Origin", "*"));
     
 	// Use AuthenticationEntryPoint to authenticate user/password
-	http.httpBasic().authenticationEntryPoint(authEntryPoint);
+	//http.httpBasic().authenticationEntryPoint(authEntryPoint).and().cors();
   }
    
    
@@ -49,4 +53,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   }
  
 }
+
 

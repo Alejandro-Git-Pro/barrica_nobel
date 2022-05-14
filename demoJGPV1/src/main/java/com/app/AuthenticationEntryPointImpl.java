@@ -23,3 +23,4 @@ public class AuthenticationEntryPointImpl extends BasicAuthenticationEntryPoint 
 		super.afterPropertiesSet();
 	}
 }
+
