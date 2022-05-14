@@ -2,6 +2,8 @@ plugins {
 	id 'org.springframework.boot' version '2.6.4'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'jacoco'
+	id 'eclipse'
 }
 
 group = 'com.app'
@@ -12,13 +14,18 @@ repositories {
 	mavenCentral()
 }
 
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'org.springframework.boot:spring-boot-starter-web:2.6.4'
-    //implementation 'org.springframework.boot:spring-boot-starter-security:2.6.3'
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-web:2.6.4'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.4'
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.apache.commons:commons-lang3:3.6'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'mysql:mysql-connector-java'
+	implementation 'com.h2database:h2'
+	
 
 	compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -28,15 +35,29 @@ dependencies {
     }
 	
 }
+
+
 tasks.named('test') {
 	useJUnitPlatform()
 }
 
+jacoco {
+    toolVersion = "0.8.7"
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
 
-[10:34 a. m., 19/3/2022] +57 321 6430892: jacocoTestReport {
-   reports {
-      xml.enabled true
-   }
+jacocoTestReport {
+    reports {
+			xml.enabled true
+    }
+}
+
+test {
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
 }
 
 
@@ -44,17 +65,37 @@ jacocoTestCoverageVerification {
     violationRules {
         rule {
             limit {
-                minimum = 0.8
+                minimum = 0.5
+            }
+        }
+
+        rule {
+            enabled = false
+            element = 'CLASS'
+            includes = ['org.gradle.*']
+
+            limit {
+                counter = 'LINE'
+                value = 'TOTALCOUNT'
+                maximum = 0.3
             }
         }
     }
 }
-[10:35 a. m., 19/3/2022] +57 321 6430892: plugins {
-	id 'org.springframework.boot' version '2.6.4'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'java'
-    id 'jacoco'                                 
-    id 'org.sonarqube' version '3.0' 
+
+test {
+    jacoco {
+        destinationFile = layout.buildDirectory.file('jacoco/jacocoTest.exec').get().asFile
+        classDumpDir = layout.buildDirectory.dir('jacoco/classpathdumps').get().asFile
+    }
+}
+
+
+tasks.register('TareaCustom') {
+    doLast {
+        println 'Hello world!'
+        println ' Leer Documentacion https://docs.gradle.org/current/userguide/tutorial_using_tasks.html '
+    }
 }
 
 
