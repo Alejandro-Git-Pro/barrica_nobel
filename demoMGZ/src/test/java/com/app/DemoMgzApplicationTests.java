@@ -17,14 +17,14 @@ class DemoMgzApplicationTests {
 	TestRestTemplate restTemplate = new TestRestTemplate();
 	
 	
-	@Test
-	public void greetingTest() {
+	//@Test
+	//public void greetingTest() {
 		
-		String URL = "http://localhost:" + port + "/greeting?name=Mateo";
-		String restRequest = restTemplate.getForObject(URL, Greeting.class).getContent();
+		//String URL = "http://localhost:" + port + "/greeting?name=Mateo";
+		//String restRequest = restTemplate.getForObject(URL, Greeting.class).getContent();
 		
-		assertTrue(restRequest.equals("Hello, Mateo!"));
+		//assertTrue(restRequest.equals("Hello, Mateo!"));
 		
-	}
+	//}
 
 }

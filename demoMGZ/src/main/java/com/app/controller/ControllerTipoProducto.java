@@ -30,7 +30,7 @@ public class ControllerTipoProducto {
 	//GET
 	
 	@CrossOrigin(origins = "*")
-	@PostMapping
+	@PostMapping (value = "/Agregar")
 	public Object AgregarProducto(@RequestBody TipoProducto t) 
 	{
 		return tipoProductoRepository.save(t);
@@ -39,14 +39,14 @@ public class ControllerTipoProducto {
 	
 	@CrossOrigin(origins = "*")
 	
-	@GetMapping (path= "/getTipoProductos" , produces="application/json")
+	@GetMapping (value = "/getTipoProductos" , produces="application/json")
 	public List<TipoProducto> getTipoProductos()
 	{	
 		return tipoProductoRepository.findAll();
 	} 
 	
 	@CrossOrigin(origins = "*")
-	@DeleteMapping(value = "/{id}")
+	@DeleteMapping(value = "/delete/{id}")
 	public void EliminarProducto(@PathVariable long id) {
 		tipoProductoRepository.deleteById(id);
 	}
@@ -57,7 +57,7 @@ public class ControllerTipoProducto {
 		return tipoProductoRepository.findById(id);
 	}
 	@CrossOrigin(origins = "*")
-	@PutMapping
+	@PutMapping(value = "/Actualizar")
 	public void ActualizarProducto(@RequestBody TipoProducto t) {
 		tipoProductoRepository.saveAndFlush(t);
 	}
