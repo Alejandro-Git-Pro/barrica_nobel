@@ -6,6 +6,9 @@ plugins {
 	id 'eclipse'
 }
 
+
+
+
 group = 'com.app'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
@@ -96,6 +99,11 @@ tasks.register('TareaCustom') {
         println 'Hello world!'
         println ' Leer Documentacion https://docs.gradle.org/current/userguide/tutorial_using_tasks.html '
     }
+    
+    
+
+    
+    
 }
 
 
