@@ -27,6 +27,7 @@ public class DescuentoController {
 
 	@Autowired
 	private DescuentoCRUDRepository descRep;
+	
 	@Autowired
 	private DescuentoQUERYRepository descQueryRep;
 	

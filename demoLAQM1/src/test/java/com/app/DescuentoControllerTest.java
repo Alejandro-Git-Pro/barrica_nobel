@@ -19,16 +19,6 @@ class DescuentoControllerTest {
 	void contextLoads() {
 	}
 
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
 	
-	@Test
-	public void addNewDescTest() {
-		String URL = "http://localhost:" + port + "api/descuento/adddesc";
-		String restRequest = restTemplate.getForObject(URL, Greeting.class).getContent();
-		assertTrue(restRequest.equals("Hello, Luis!"));
-	}
 
 }
