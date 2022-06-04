@@ -48,8 +48,8 @@ public class Clientecontroller {
 	}
 	
 	@CrossOrigin(origins = "*")
-	@DeleteMapping(path = "/Clientedelete")
-	public String delenteCliente(Long id) {
+	@DeleteMapping(path = "/Clientedelete/{id}")
+	public String delenteCliente(@PathVariable Long id) {
 		ClienteRepository.deleteById(id);
 		return "eliminado";
 	}
