@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demoappnamejgpiue-gke
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demoiuecontainername
+  template:
+    metadata:
+      labels:
+        app: demoiuecontainername
+    spec:
+      containers:
+      - name: demoiuecontainername-app
+        image: gcr.io/graceful-wall-352301/demoimagejgpiue
+        ports:
+        - containerPort: 9000
+        env:
+          - name: PORT
+            value: "9000"
