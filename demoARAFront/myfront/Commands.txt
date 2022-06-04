@@ -1,0 +1,7 @@
+npm install -g create-react-app
+npx create-react-app myfront
+cd myfront
+npm start
+npm install axios --save
+npm install primereact --save
+npm install classnames --save
